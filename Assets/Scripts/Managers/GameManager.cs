@@ -44,7 +44,11 @@ void Start() => SetState(GameState.Menu);
         switch (state)
         {
             case GameState.Menu:
-    UIManager.Instance?.ShowMenu(true);
+    if (UIManager.Instance != null)
+    {
+        UIManager.Instance.ShowMenu(true);
+        UIManager.Instance.ShowGameOver(false);
+    }
     break;
                 currentRound++;
                 prepTimer = preparationTime;

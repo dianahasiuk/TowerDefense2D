@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0383d9ca1069741debd7de410a793b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  startingGold: 200
+  startingGold: 300
   baseHealth: 20
   totalRounds: 10
   preparationTime: 15

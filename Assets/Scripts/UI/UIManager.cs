@@ -42,10 +42,22 @@ public class UIManager : MonoBehaviour
     { if (timerText) timerText.text = seconds > 0 ? "Prep: " + seconds + "s" : "BATTLE!"; }
 
     public void ShowGameOver(bool playerWon)
+{
+    if (!playerWon && gameOverPanel)
     {
-        if (gameOverPanel) gameOverPanel.SetActive(true);
-        if (gameOverText) gameOverText.text = playerWon ? "ПЕРЕМОГА!" : "ПОРАЗКА!";
+        gameOverPanel.SetActive(true);
+        if (gameOverText) gameOverText.text = "ПОРАЗКА!";
     }
+    else if (playerWon && gameOverPanel)
+    {
+        gameOverPanel.SetActive(true);
+        if (gameOverText) gameOverText.text = "ПЕРЕМОГА!";
+    }
+    else
+    {
+        if (gameOverPanel) gameOverPanel.SetActive(false);
+    }
+}
 
     public void ShowMenu(bool show)
     {
